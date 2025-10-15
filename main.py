@@ -24,8 +24,8 @@ MOD_ROLES = [
 # ==========================
 #         ТОКЕН
 # ==========================
-with open("token.json", "r") as f:
-    TOKEN = json.load(f)["token"]
+import os
+TOKEN = os.getenv("TOKEN")
 
 # ==========================
 #         ИНТЕНТЫ
@@ -279,3 +279,4 @@ async def verif(interaction: discord.Interaction, user: discord.Member):
 #         ЗАПУСК БОТА
 # ==========================
 bot.run(TOKEN)
+
